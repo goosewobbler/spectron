@@ -92,7 +92,7 @@ async function addApis(webdriverClient: WebDriverClient, nameSpace: string, plac
       Object.keys(placeholders[nameSpace]).map(async (funcName) => {
         const commandName = placeholders[nameSpace][funcName];
 
-        function executeApiCall(this: WebDriverClient, ...args: unknown[]) {
+        async function executeApiCall(this: WebDriverClient, ...args: unknown[]) {
           return (this.executeAsync as WebdriverClientFunc)(callApi, funcName, nameSpace, args);
         }
 
