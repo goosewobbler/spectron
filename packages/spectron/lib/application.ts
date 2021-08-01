@@ -57,7 +57,7 @@ export async function initSpectron({ quitTimeout }: BasicAppSettings): Promise<S
     spectronObj.quit = async () => {
       // await spectronObj.electronApp.quit();
       if (spectronObj.mainProcess) {
-        spectronObj.mainProcess.abort();
+        await spectronObj.mainProcess.abort();
       }
 
       await delay(quitTimeout);
@@ -65,7 +65,7 @@ export async function initSpectron({ quitTimeout }: BasicAppSettings): Promise<S
 
     async function waitUntilWindowLoaded(this: Browser<'async'>, timeout: Partial<WaitUntilOptions>) {
       try {
-        await this.waitUntil(() => !spectronObj.webContents.isLoading(), timeout);
+        await this.waitUntil(async () => !(await spectronObj.webContents.isLoading()), timeout);
       } catch (error) {
         throw new Error(`waitUntilWindowLoaded error: ${(error as Error).message}`);
       }
