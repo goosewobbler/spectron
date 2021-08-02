@@ -1,22 +1,22 @@
-import { BrowserBase, setupBrowser, WebdriverIOBoundFunctions } from '@testing-library/webdriverio';
-import { queries } from '@testing-library/dom';
+// import { BrowserBase, setupBrowser, WebdriverIOBoundFunctions } from '@testing-library/webdriverio';
+// import { queries } from '@testing-library/dom';
 import { initSpectron } from '@goosewobbler/spectron';
 import { SpectronApp } from '../packages/spectron/lib/application';
 
 describe('application loading', () => {
-  let screen: WebdriverIOBoundFunctions<typeof queries>;
+  // let screen: WebdriverIOBoundFunctions<typeof queries>;
   let app: SpectronApp;
 
   describe('App', () => {
     beforeAll(async () => {
       app = await initSpectron({
-        quitTimeout: 0,
+        quitTimeout: 3000,
       });
     });
 
     beforeEach(async () => {
       await app.client.waitUntilWindowLoaded();
-      screen = setupBrowser(app.client as unknown as BrowserBase);
+      // screen = setupBrowser(app.client as BrowserBase);
     }, 30000);
 
     afterEach(async () => {
@@ -35,7 +35,9 @@ describe('application loading', () => {
       await app.client.waitUntilTextExists('html', 'Hello');
       const title = await app.client.getTitle();
       expect(title).toEqual('Test');
-      expect(screen.getByText('word1 word2')).toBeDefined();
+      // expect(await screen.queryByTestId('disabled-checkbox')).toBeVisible();
+
+      // app.expect(await screen.queryByTestId('disabled-checkbox')).toBeVisible();
     });
   });
 });
