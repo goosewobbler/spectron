@@ -16,7 +16,7 @@ describe('application loading', () => {
 
     beforeEach(async () => {
       await app.client.waitUntilWindowLoaded();
-      screen = setupBrowser(app.client as BrowserBase);
+      screen = setupBrowser(app.client as unknown as BrowserBase);
     }, 30000);
 
     afterEach(async () => {
