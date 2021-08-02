@@ -29,7 +29,7 @@ describe('application loading', () => {
       const response = await app.client.getWindowHandles();
       expect(response.length).toEqual(1);
 
-      const bounds = app.browserWindow.getBounds();
+      const bounds = await app.browserWindow.getBounds();
       expect(bounds.width).toEqual(200);
       expect(bounds.height).toEqual(300);
       await app.client.waitUntilTextExists('html', 'Hello');
