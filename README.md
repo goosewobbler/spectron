@@ -135,6 +135,7 @@ Some Electron API functions may not work due to serialisation errors; this is a 
 ## Development
 
 Logging all tasks for development [here](https://github.com/goosewobbler/spectron/projects/1).
+Rewrite Discussion [here](https://github.com/electron-userland/spectron/issues/1044)
 
 ## Configuration
 
