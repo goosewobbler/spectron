@@ -6,10 +6,9 @@
   "scripts": {
     "build:app": "pnpm run --filter @goosewobbler/spectron-e2e-app build",
     "build:spectron": "pnpm run --filter @goosewobbler/spectron build",
-    "build:wdio-electron-service": "pnpm run --filter wdio-electron-service build",
     "clean": "cross-env rm -rf ./node_modules ./all-logs",
     "test": "pnpm exec wdio spectron.conf.js",
-    "test:local": "pnpm run build:wdio-electron-service && pnpm run build:spectron && pnpm run build:app && pnpm run test",
+    "test:local": "pnpm run build:spectron && pnpm run build:app && pnpm run test",
     "lint": "eslint --ignore-path ../.eslintignore \"**/*.{j,t}s\""
   },
   "devDependencies": {
