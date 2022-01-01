@@ -18,7 +18,7 @@ describe('application loading', () => {
       // await app.mainProcess.exit(0);
     });
 
-    it('should determine when an element is in the document', async () => {
+    it('should detect keyboard input', async () => {
       await app.client.keys(['y', 'o']);
       expect(await (await screen.getByTestId('keypress-count')).getText()).toEqual('YO');
     });
