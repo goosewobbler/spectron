@@ -9,6 +9,7 @@
     "clean:dist": "cross-env rm -rf ./dist && cross-env mkdir -p ./dist"
   },
   "devDependencies": {
+    "@goosewobbler/spectron": "*",
     "electron": "^16.0.4",
     "electron-builder": "^22.14.5",
     "webpack": "^5.65.0",
