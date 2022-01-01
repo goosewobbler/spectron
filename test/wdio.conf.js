@@ -1,8 +1,5 @@
 const { join } = require('path');
 const fs = require('fs-extra');
-const { run } = require('@goosewobbler/spectron');
-
-process.env.SPECTRON_APP_ARGS = ['--foo', '--bar=baz'].toString();
 
 const packageJson = JSON.parse(fs.readFileSync('./app/package.json'));
 const {
@@ -10,10 +7,20 @@ const {
 } = packageJson;
 
 const config = {
-  spectronOpts: {
-    appPath: join(process.cwd(), 'app', 'dist'),
-    appName: productName,
-  },
+  services: [
+    [
+      'electron',
+      {
+        appPath: join(process.cwd(), 'app', 'dist'),
+        appName: productName,
+        appArgs: ['foo', 'bar=baz'],
+        port: 9519,
+        logFileName: 'wdio-chromedriver.log',
+        // args: ['--silent'],
+      },
+    ],
+  ],
+  capabilities: [{}],
   // hostname: '127.0.0.1',
   port: 9519,
   waitforTimeout: 5000,
@@ -30,13 +37,9 @@ const config = {
     tsNodeOpts: {
       transpileOnly: true,
       files: true,
-      moduleTypes: {
-        // WDIO doesn't currently support ESM
-        '*.conf.ts': 'cjs',
-        '*.spec.ts': 'cjs',
-      },
       project: './tsconfig.json',
     },
+
     // tsconfig-paths is only used if "tsConfigPathsOpts" are provided, if you
     // do please make sure "tsconfig-paths" is installed as dependency
     tsConfigPathsOpts: {
@@ -50,4 +53,4 @@ const config = {
   },
 };
 
-module.exports = { config: run(config) };
+module.exports = { config };
