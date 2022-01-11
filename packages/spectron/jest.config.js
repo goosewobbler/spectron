@@ -1,6 +1,6 @@
 /* eslint  import/no-extraneous-dependencies: 'off', node/no-extraneous-require: off */
 const fs = require('fs-extra');
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
+const { pathsToModuleNameMapper } = require('ts-jest');
 
 const tsConfig = JSON.parse(fs.readFileSync('./tsconfig.json'));
 const { paths } = tsConfig.compilerOptions;
