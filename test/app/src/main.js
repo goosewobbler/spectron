@@ -2,7 +2,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
-require('wdio-electron-service/main');
+require('@goosewobbler/spectron/main');
 
 const appPath = app.getAppPath();
 
