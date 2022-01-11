@@ -11,11 +11,13 @@ const config = {
     [
       'electron',
       {
-        appPath: join(process.cwd(), 'app', 'dist'),
+        appPath: join(__dirname, 'app', 'dist'),
         appName: productName,
         appArgs: ['foo', 'bar=baz'],
-        port: 9519,
-        logFileName: 'wdio-chromedriver.log',
+        chromedriver: {
+          port: 9519,
+          logFileName: 'wdio-chromedriver.log',
+        },
         // args: ['--silent'],
       },
     ],

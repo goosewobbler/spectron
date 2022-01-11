@@ -27,7 +27,7 @@ beforeEach(() => {
       mockFn3: `spectron.app.mockFn3`,
     },
   };
-  mockWebDriverClient = mock<SpectronClient>() as MockSpectronClient;
+  mockWebDriverClient = mock<SpectronClient>() as unknown as MockSpectronClient;
   mockWebDriverClient.addCommand.mockImplementation((commandName: string, func: unknown): void => {
     mockWebDriverClient[commandName] = (...args: unknown[]) =>
       (func as () => void).apply(mockWebDriverClient, args as []);
