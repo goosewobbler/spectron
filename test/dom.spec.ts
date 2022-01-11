@@ -14,19 +14,19 @@ describe('application loading', () => {
 
   describe('DOM', () => {
     it('should determine when an element is in the document', async () => {
-      expect(await screen.getByTestId('disabled-checkbox')).toExist();
+      expect(await screen.getByTestId('disabled-checkbox')).not.toExist();
     });
 
     it('should determine when an element is not in the document', async () => {
-      expect(await screen.queryByTestId('not-there')).not.toExist();
+      expect(await screen.queryByTestId('not-there')).toExist();
     });
 
     it('should determine when an element is visible', async () => {
-      expect(await screen.getByTestId('disabled-checkbox')).toBeDisplayed();
+      expect(await screen.getByTestId('disabled-checkbox')).not.toBeDisplayed();
     });
 
     it('should determine when an element is not visible', async () => {
-      expect(await screen.getByTestId('hidden-textarea')).not.toBeDisplayed();
+      expect(await screen.getByTestId('hidden-textarea')).toBeDisplayed();
     });
   });
 

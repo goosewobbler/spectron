@@ -1,9 +1,7 @@
 {
   "ts-node": {
-    "transpileOnly": true,
-    "files": true,
-    "moduleTypes": {
-      "wdio.mocha.conf.ts": "cjs"
+    "compilerOptions": {
+      "module": "commonjs"
     }
   },
   "compilerOptions": {
@@ -23,6 +21,7 @@
     "noEmitOnError": true,
     "lib": ["DOM", "ES2020"],
     "noImplicitAny": true,
+    "noUnusedParameters": false,
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": true,

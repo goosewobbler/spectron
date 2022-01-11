@@ -30,13 +30,13 @@
       <input id="disabled-checkbox" type="checkbox" data-testid="disabled-checkbox" disabled />
     </label>
     <textarea class="none" rows="10" cols="80" data-testid="hidden-textarea"></textarea>
-    <div class="keypress-count"></div>
+    <div class="keypress-count" data-testid="keypress-count"></div>
   </body>
 
   <script nonce="4QEemGb0xJptpIGFP3Nd">
     document.addEventListener('DOMContentLoaded', () => {
       document.body.addEventListener('keydown', (event) => {
-        document.querySelector('.keypress-count').innerText = String.fromCharCode(event.keyCode);
+        document.querySelector('.keypress-count').innerText += String.fromCharCode(event.keyCode);
       });
       document.querySelector('.make-bigger').addEventListener('click', () => {
         window.api.invoke('increase-window-size');

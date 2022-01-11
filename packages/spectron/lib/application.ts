@@ -1,6 +1,4 @@
-/* global browser */
 import { Browser, WaitUntilOptions } from 'webdriverio';
-import { ApiNames, createApi } from './api';
 import {
   SpectronApp,
   SpectronClient,
@@ -10,12 +8,13 @@ import {
   SpectronWebContents,
   SpectronWindow,
 } from '~/common/types';
+import { ApiNames, createApi } from './api';
 
 export async function initSpectron(): Promise<SpectronApp> {
   const spectron = await (async (): Promise<SpectronApp> => {
     const spectronObj = {} as SpectronApp;
     const apiNames: ApiNames = ['browserWindow', 'webContents', 'app', 'mainProcess', 'rendererProcess'];
-    const apis = await createApi(browser as unknown as SpectronClient, apiNames);
+    const apis = await createApi(browser, apiNames);
 
     spectronObj.browserWindow = apis.browserWindow as SpectronWindow;
     spectronObj.webContents = apis.webContents as SpectronWebContents;
@@ -73,7 +72,7 @@ export async function initSpectron(): Promise<SpectronApp> {
     browser.addCommand('windowByIndex', windowByIndex);
     browser.addCommand('getSelectedText', getSelectedText);
 
-    spectronObj.client = browser as SpectronClient;
+    spectronObj.client = browser as unknown as SpectronClient;
 
     return spectronObj;
   })();
