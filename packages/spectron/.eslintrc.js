@@ -23,6 +23,7 @@ module.exports = {
       rules: {
         'no-unused-vars': 'off',
         'import/prefer-default-export': 'off',
+        'import/no-extraneous-dependencies': 'off',
         'node/no-missing-import': 'off', // duped by import
         'node/no-unpublished-import': 'error', // switched on for the NPM package
         'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],

@@ -14,7 +14,7 @@ describe('application loading', () => {
 
   describe('App', () => {
     afterEach(() => {
-      console.log('afterEach');
+      // console.log('afterEach');
       // await app.mainProcess.exit(0);
     });
 
