@@ -1,13 +1,28 @@
 # <img src="https://cloud.githubusercontent.com/assets/378023/15063284/cf544f2c-1383-11e6-9336-e13bd64b1694.png" width="60px" align="center" alt="Spectron icon"> Spectron
 
 [![CI](https://github.com/goosewobbler/spectron/workflows/CI/badge.svg)](https://github.com/goosewobbler/spectron/actions)
-[![dependencies](https://img.shields.io/david/goosewobbler/spectron.svg)](https://david-dm.org/goosewobbler/spectron) [![license:mit](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT) [![npm:](https://img.shields.io/npm/v/@goosewobbler/spectron.svg)](https://www.npmjs.com/package/@goosewobbler/spectron) [![downloads](https://img.shields.io/npm/dm/@goosewobbler/spectron.svg)](https://www.npmjs.com/package/@goosewobbler/spectron)
+[![Libraries.io dependencies status](https://img.shields.io/librariesio/release/github/goosewobbler/spectron)](https://libraries.io/github/goosewobbler/spectron) [![license:mit](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT) [![npm:](https://img.shields.io/npm/v/@goosewobbler/spectron.svg)](https://www.npmjs.com/package/@goosewobbler/spectron) [![downloads](https://img.shields.io/npm/dm/@goosewobbler/spectron.svg)](https://www.npmjs.com/package/@goosewobbler/spectron)
 
 Easily test your [Electron](http://electronjs.org) apps using [WebdriverIO](http://webdriver.io) and [Chromedriver](https://sites.google.com/chromium.org/driver/).
+
+## RIP Spectron - long live WDIO
+
+[`wdio-electron-service`](https://github.com/webdriverio-community/wdio-electron-service) has been released enabling Electron apps to be tested natively in WebdriverIO. This fork of Spectron is now redundant, though some of the Electron APIs / browser helper functions *may* be ported to the new service if required.
+
+Please try out the new service if you are interested in using modern WebdriverIO and its extensive ecosystem for E2E testing Electron apps.
+
+## Modern alternatives to Spectron for Electron E2E testing:
+
+[WebdriverIO](https://webdriver.io) \
+[Playwright](https://playwright.dev) (currently experimental Electron support) \
+[Puppeteer-in-electron](https://github.com/TrevorSundberg/puppeteer-in-electron)
+
+---
 
 ## Rationale
 
 This fork of Spectron exists to fulfil a simple requirement - bring Spectron in line with modern versions of Electron & WebdriverIO, by any means necessary. The code has been completely rewritten in Typescript with modern dependencies and a much greater WebdriverIO integration.
+
 
 ## Installation & Quick Start
 
@@ -141,7 +156,4 @@ Rewrite Discussion [here](https://github.com/electron-userland/spectron/issues/1
 
 Details of how to configure Spectron can be found [here](./docs/configuration.md).
 
-## Alternative options for Electron E2E testing:
 
-[Playwright](https://playwright.dev) (currently experimental Electron support) \
-[Puppeteer-in-electron](https://github.com/TrevorSundberg/puppeteer-in-electron)
