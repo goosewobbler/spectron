@@ -7,9 +7,9 @@ Easily test your [Electron](http://electronjs.org) apps using [WebdriverIO](http
 
 ## RIP Spectron - long live WDIO
 
-[`wdio-electron-service`](https://github.com/webdriverio-community/wdio-electron-service) has been released enabling Electron apps to be tested natively in WebdriverIO.  I updated this fork to use the new service but this change effectively makes Spectron mostly, if not entirely redundant.  Some of the Electron APIs / browser helper functions here *may* be ported to the new service if/as required, but this fork of Spectron will no longer be updated.
+[`wdio-electron-service`](https://github.com/webdriverio-community/wdio-electron-service) has now been released enabling Electron apps to be tested natively in WebdriverIO.  I updated this fork to use the new service but this change effectively makes Spectron mostly, if not entirely redundant.  Some of the Electron APIs / browser helper functions here *may* be ported to the new service if/as required, but this fork of Spectron will no longer be updated.
 
-Please try out the new service if you are interested in using modern WebdriverIO and its extensive ecosystem for E2E testing Electron apps.
+Please try out the new service if you are interested in using modern WebdriverIO and its extensive ecosystem for E2E testing Electron apps. It should be a more than adequate replacement for Spectron, but if anything critical is missing for your use case please let us know.
 
 ## Modern alternatives to Spectron for Electron E2E testing:
 
